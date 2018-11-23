@@ -1,0 +1,88 @@
+{%extends 'base.html'%}
+
+{% load staticfiles %}
+
+{% block body %} <!--사진의 경우 옵션 2개 중 중 1개만 출력할 것, 또한 사진을 넣으면 가운데 정렬 실시--> 
+   <div id="our-team">
+		<div class="container">
+			<div class="text-center">
+				<h3>Our Team</h3>
+				<p>딥북을 만든 팀원을 소개합니다<br>추가 설명</p>
+			</div>
+			<div class="row justify-content-md-center">
+				<div class="col-md-4 wow fadeInUp " data-wow-offset="0" data-wow-delay="0.3s">
+					<div class="text-center">
+						<img src="{% static 'img/team/1.png' %}" alt="">
+						<h2>John Doe</h2>
+						<h4>Founder & CEO</h4>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit Fusce fermen tum neque a rutrum varius</p>
+					</div>
+				</div>
+				<div class="col-md-4 wow bounceInDown" data-wow-offset="0" data-wow-delay="0.3s">
+					<div class="text-center">
+						<img src="{% static 'img/team/2.png' %}" alt="">
+						<h2>John Doe</h2>
+						<h4>Creative Director</h4>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit Fusce fermen tum neque a rutrum varius</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+			<div class="col-md-4 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
+					<div class="text-center">
+						<img src="{% static 'img/team/3.png' %}" alt="">
+						<h2>John Smith</h2>
+						<h4>Creative Director</h4>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit Fusce fermen tum neque a rutrum varius</p>
+					</div>
+				</div>
+			<div class="col-md-4 wow bounceInDown" data-wow-offset="0" data-wow-delay="0.3s">
+					<div class="text-center">
+						<img src="{% static 'img/team/2.png' %}" alt="">
+						<h2>John Doe</h2>
+						<h4>Creative Director</h4>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit Fusce fermen tum neque a rutrum varius</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="team">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 wow fadeInRight" data-wow-offset="0" data-wow-delay="0.3s">
+						<div class="text-center">
+							<img src="{% static 'img/team/team1.jpg' %}" class="img-responsive" alt="">
+							<h2>John Doe</h2>
+							<h4>Founder & CEO</h4>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit Fusce fermen tum neque a rutrum varius</p>
+						</div>
+					</div>
+					<div class="col-md-3 wow fadeInRight" data-wow-offset="0" data-wow-delay="0.3s">
+						<div class="text-center">
+							<img src="{% static 'img/team/team2.jpg' %}" class="img-responsive" alt="">
+							<h2>John Doe</h2>
+							<h4>Creative Director</h4>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit Fusce fermen tum neque a rutrum varius</p>
+						</div>
+					</div>
+					<div class="col-md-3 wow fadeInLeft" data-wow-offset="0" data-wow-delay="0.3s">
+						<div class="text-center">
+							<img src="{% static 'img/team/team3.jpg' %}" class="img-responsive" alt="">
+							<h2>John Smith</h2>
+							<h4>Creative Director</h4>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit Fusce fermen tum neque a rutrum varius</p>
+						</div>
+					</div>
+					<div class="col-md-3 wow fadeInLeft" data-wow-offset="0" data-wow-delay="0.3s">
+						<div class="text-center">
+							<img src="{% static 'img/team/team4.jpg' %}" class="img-responsive" alt="">
+							<h2>John Smith</h2>
+							<h4>Creative Director</h4>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit Fusce fermen tum neque a rutrum varius</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!--/#our-team-->
+{% endblock %}
