@@ -8,3 +8,11 @@ class TeamPage(TemplateView):
     
 class ContactPage(TemplateView):
     template_name = 'contact.html'
+    
+    
+class DeepPage(TemplateView):
+    template_name = 'deep.html'
+    
+
+class BookPage(TemplateView):
+    template_name = 'book.html'    
