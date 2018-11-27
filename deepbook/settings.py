@@ -26,8 +26,8 @@ SECRET_KEY = 'irv&2cir8&atr&a3qd@-_9@x_1gqje_mk5%o0+)q^8=&bh44jn'
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['*']
-
+# ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['likelion-teamproject-sanghyeon.c9users.io/']
 
 # Application definition
 
