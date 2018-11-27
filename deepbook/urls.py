@@ -24,4 +24,5 @@ urlpatterns = [
     path('contact/', views.ContactPage.as_view(), name='contact'),
     path('deep/', views.DeepPage.as_view(), name='deep'),
     path('book/', views.BookPage.as_view(), name='book'),
+    path('server/', views.CreatePage.as_view(), name='server'),
 ]
