@@ -3,15 +3,44 @@
 {% load staticfiles %}
 
 {% block body %} 
-<div id="pricing">
-<div class="container">
-<label class="btn btn-primary" for="my-file-selector">
-    <input id="my-file-selector" type="file" style="display:none" 
-    onchange="$('#upload-file-info').html(this.files[0].name)">
-    폐결절 진단
-</label>
-<span class='label label-info' id="upload-file-info"></span>
-</div>
-</div>
+
+     <!--main page-->
+	 <div class="slider">		
+		<div id="about-slider">
+			<div id="carousel-slider" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators visible-xs">
+					<li data-target="#carousel-slider" data-slide-to="0" class="active"></li>
+					<li data-target="#carousel-slider" data-slide-to="1"></li>
+					<li data-target="#carousel-slider" data-slide-to="2"></li>
+				</ol>
+				    <div class="item">
+						<img src="{% static 'img/team/back.png' %}" class="img-responsive" style="vertical-align: width:700px; height:770px;" alt=""> 
+
+						<div class="carousel-caption" style="top:38%">
+							
+							<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.9s">								
+								<form class="form-inline">
+									<!--<div class="form-group">-->
+									<!--	<button type="livedemo" name="purchase" class="btn btn-primary btn-lg" required="required">Deep Go!</button>-->
+									<!--</div>-->
+									<div class="form-group">
+                                        <label style="font-size:15px" class="btn btn-primary btn-lg" for="my-file-selector">
+                                            <input id="my-file-selector" type="file" style="display:none"  
+                                            onchange="$('#upload-file-info').html(this.files[0].name)">
+                                            폐결절 진단
+                                        </label>									
+                                    </div>
+									
+								</form>
+							</div>
+						</div>
+				    </div> 
+				</div>
+			</div> <!--/#carousel-slider-->
+		</div><!--/#about-slider-->
+	</div><!--/#slider-->
+    </div>
+
 
 {% endblock %}
