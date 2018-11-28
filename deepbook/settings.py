@@ -25,8 +25,13 @@ SECRET_KEY = 'irv&2cir8&atr&a3qd@-_9@x_1gqje_mk5%o0+)q^8=&bh44jn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+<<<<<<< HEAD
 ALLOWED_HOSTS = ['*']
+=======
+>>>>>>> 03b3ed808725c4b260d21b80662a78594770caea
 
+# ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['likelion-teamproject-sanghyeon.c9users.io/']
 
 # Application definition
 
