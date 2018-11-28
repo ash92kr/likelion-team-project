@@ -15,24 +15,49 @@
 					<li data-target="#carousel-slider" data-slide-to="2"></li>
 				</ol>
 				    <div class="item">
-						<img src="{% static 'img/team/back.png' %}" class="img-responsive" style="vertical-align: width:700px; height:770px;" alt=""> 
+						<img src="{% static 'img/team/deep.png' %}" class="img-responsive" salt=""> 
 
-						<div class="carousel-caption" style="top:38%">
+						<div class="carousel-caption" style="top:20%">
 							
 							<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.9s">								
-								<form class="form-inline">
+								<!--<form class="form-inline">-->
 									<!--<div class="form-group">-->
 									<!--	<button type="livedemo" name="purchase" class="btn btn-primary btn-lg" required="required">Deep Go!</button>-->
 									<!--</div>-->
 									<div class="form-group">
-                                        <label style="font-size:15px" class="btn btn-primary btn-lg" for="my-file-selector">
-                                            <input id="my-file-selector" type="file" style="display:none"  
-                                            onchange="$('#upload-file-info').html(this.files[0].name)">
-                                            폐결절 진단
-                                        </label>									
+										<h2 style="font-family:Roboto">AI's health advice</h2>
+										<h1 style="font-family:Roboto">Helping to detect pulmonary nodule</h1>
+					
+                                        <!--<label style="font-size:15px" class="btn btn-primary btn-lg" for="my-file-selector">-->
+                                        <!--    <input id="my-file-selector" type="file" style="display:none"  -->
+                                        <!--    onchange="$('#upload-file-info').html(this.files[0].name)">-->
+                                        <!--    이미지 선택-->
+                                        <!--</label>-->
+                                     <!--<div class="input-group">-->
+  <!--<div class="custom-file">-->
+  <!--  <input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">-->
+  <!--  <br>  -->
+  <!--  <label class="custom-file-label" for="inputGroupFile04">Choose file</label>-->
+  <!--</div>-->
+  <!--<div class="input-group-append">-->
+  <!--  <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button>-->
+  <!--</div>-->
+  <!--<div class="input-group">-->
+  
+  <form action="{%url 'xray:create'%}" method="post" enctype="multipart/form-data">
+  	{%csrf_token%}
+	  <input type="file" class="form-control" name="image" aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
+	  <div class="input-group-append" id="button-addon4">
+	    <input type="submit" class="btn btn-outline-secondary" value="진단하기"></input>
+	  </div>
+  </form>
+  
+</div>
+<!--</div>   -->
+
                                     </div>
-									
-								</form>
+
+								<!--</form>-->
 							</div>
 						</div>
 				    </div> 
@@ -41,6 +66,8 @@
 		</div><!--/#about-slider-->
 	</div><!--/#slider-->
     </div>
+
+
 
 
 {% endblock %}

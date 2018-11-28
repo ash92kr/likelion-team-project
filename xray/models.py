@@ -1,11 +1,21 @@
 from django.db import models
 from django.conf import settings
+from django.urls import reverse
+from imagekit.models import ProcessedImageField
+from imagekit.processors import ResizeToFill
+
+
+def post_image_path(instance, filename):
+    return 'posts/{}/{}'.format(instance.pk, filename)
 
 class Xray(models.Model):
-    result = models.TextField()
-    time = models.DateTimeField(auto_now=True)
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default=1)
+    image = ProcessedImageField(
+                upload_to=post_image_path,
+                processors=[ResizeToFill(300,300)],
+                format='JPEG',
+                options={'quality':90},
+                )
 
-    class Meta:
-        ordering = ['-time']  # 최신글이 가장 위로 올라오도록 역순으로 지정
-        
+
+
+    

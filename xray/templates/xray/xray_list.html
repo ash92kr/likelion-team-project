@@ -1,0 +1,11 @@
+<h1>xray List</h1>
+
+<a href="{% url 'posts:create' %}">New Post</a>  <!--url 'app_name:name-->
+
+<ul>
+{% for xray in xray_list %}
+    <li>
+        <img src="{{ xray.image.url }}"></img>
+    </li>
+{% endfor %}
+</ul>
