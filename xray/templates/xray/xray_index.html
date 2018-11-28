@@ -15,7 +15,7 @@
 					<li data-target="#carousel-slider" data-slide-to="2"></li>
 				</ol>
 				    <div class="item">
-						<img src="{% static 'img/team/deep.png' %}" class="img-responsive" salt=""> 
+						<img src="{% static 'img/team/deep.png' %}" class="img-responsive" style="width:1300px; height:750px;" salt=""> 
 
 						<div class="carousel-caption" style="top:20%">
 							
@@ -27,7 +27,9 @@
 									<div class="form-group">
 										<h2 style="font-family:Roboto">AI's health advice</h2>
 										<h1 style="font-family:Roboto">Helping to detect pulmonary nodule</h1>
-					
+										<br>
+										<br>
+										<br>
                                         <!--<label style="font-size:15px" class="btn btn-primary btn-lg" for="my-file-selector">-->
                                         <!--    <input id="my-file-selector" type="file" style="display:none"  -->
                                         <!--    onchange="$('#upload-file-info').html(this.files[0].name)">-->
@@ -46,9 +48,10 @@
   
   <form action="{%url 'xray:create'%}" method="post" enctype="multipart/form-data">
   	{%csrf_token%}
-	  <input type="file" class="form-control" name="image" aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
+	  <input type="file" class="form-control" name="image" aria-label="Recipient's username with two button addons" aria-describedby="button-addon4" style="width:50%;margin-left:25%;">
 	  <div class="input-group-append" id="button-addon4">
-	    <input type="submit" class="btn btn-outline-secondary" value="진단하기"></input>
+	  	<br>
+	    <input type="submit" class="btn btn-outline-secondary" value="진단하러가기" ></input>
 	  </div>
   </form>
   
@@ -66,8 +69,18 @@
 		</div><!--/#about-slider-->
 	</div><!--/#slider-->
     </div>
+<br>
 
-
+<div class="text-center">
+		<div class="copyright">
+			&copy; 2018 <a target="_blank" href="http://bootstraptaste.com/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">DeepBook</a>. All Rights Reserved.
+		</div>
+           <!-- 
+               All links in the footer should remain intact. 
+               Licenseing information is available at: http://bootstraptaste.com/license/
+               You can buy this theme without footer links online at: http://bootstraptaste.com/buy/?theme=Bikin
+           -->
+	</div>			
 
 
 {% endblock %}

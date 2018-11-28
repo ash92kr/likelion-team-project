@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+
+{% load staticfiles %}
+
+{% block body %} 
+
+<h1>Xray Delete</h1>
+
+<form method="post">
+    {% csrf_token %}
+    <p>{{ xray.pk }}번, 삭제하시겠습니까?</p>
+    <input type="submit" value="Confirm"/>
+</form>
+
+{% endblock %}

@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, CreateView, ListView
+from django.views.generic import TemplateView, CreateView, ListView, DetailView, DeleteView
 from .models import Xray
+from django.urls import reverse_lazy
 
 # Create your views here.
 class XrayIndex(TemplateView):
@@ -8,13 +9,14 @@ class XrayIndex(TemplateView):
 
 class XrayCreate(CreateView):
     model = Xray
-    fields=('image',)
+    fields=['image',]
 
 class XrayList(ListView):
     model = Xray
 
+class XrayDetail(DetailView):
+    model = Xray
 
-    
-    
-# def read_img(request):
-#     img = request.POST
+class XrayDelete(DeleteView):
+    model = Xray
+    success_url = reverse_lazy('xray:list')

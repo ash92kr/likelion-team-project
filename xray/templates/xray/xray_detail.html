@@ -4,7 +4,13 @@
 
 {% block body %} 
 
+<h1>Xray Detail</h1>
 
+<div>
+    <img src="{{ xray.image.url }}"></img>
+    <p>{{ xray.content }}</p>
+</div>
 
+<a href="{% url 'xray:delete' pk=xray.pk %}">Delete</a>
 
 {% endblock %}

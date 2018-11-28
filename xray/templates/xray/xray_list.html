@@ -1,9 +1,21 @@
+{%extends 'base.html'%}
+
+{% load staticfiles %}
+
+{% block body %} 
 <h1>xray List</h1>
 
 <ul>
 {% for xray in xray_list %}
     <li>
+        <a href="{% url 'xray:detail' pk=xray.pk %}">
         <img src="{{ xray.image.url }}"></img>
+        </a>
+        <a href="{% url 'xray:delete' pk=xray.pk %}">Delete</a>
+
     </li>
+
 {% endfor %}
 </ul>
+
+{%endblock%}
