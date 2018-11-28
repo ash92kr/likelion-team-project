@@ -1,7 +1,7 @@
 from django.db import models
 from django.conf import settings
 
-class Deep(models.Model):
+class Xray(models.Model):
     result = models.TextField()
     time = models.DateTimeField(auto_now=True)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default=1)
