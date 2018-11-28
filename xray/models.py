@@ -6,7 +6,7 @@ from imagekit.processors import ResizeToFill
 
 
 def post_image_path(instance, filename):
-    return 'posts/{}/{}'.format(instance.pk, filename)
+    return 'image/{}/{}'.format(instance.pk, filename)
 
 class Xray(models.Model):
     image = ProcessedImageField(
@@ -16,6 +16,8 @@ class Xray(models.Model):
                 options={'quality':90},
                 )
 
+def get_absolute_url(self):
+        return reverse('xray:index')#,kwargs={'pk':self.pk}) #=> /posts/1
 
 
     
