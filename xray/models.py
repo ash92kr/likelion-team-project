@@ -2,7 +2,6 @@ from django.db import models
 from django.conf import settings
 
 class Deep(models.Model):
-    image = models.ImageField()
     result = models.TextField()
     time = models.DateTimeField(auto_now=True)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default=1)
