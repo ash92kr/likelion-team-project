@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'book',
     'imagekit',
     'accounts',
-    'posts',
     'django.contrib.sites',
     'allauth',
     'allauth.account',
@@ -137,8 +136,8 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-LOGIN_REDIRECT_URL = 'posts:list'
-LOGOUT_REDIRECT_URL = 'posts:list'
+LOGIN_REDIRECT_URL = 'xray:list'
+LOGOUT_REDIRECT_URL = 'xray:list'
 
 AUTHENTICATION_BACKENDS = (
     

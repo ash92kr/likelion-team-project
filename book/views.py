@@ -3,3 +3,5 @@ from django.views.generic import TemplateView
 # Create your views here.
 class BookIndex(TemplateView):
     template_name = 'book/book_index.html'
+    
+    
