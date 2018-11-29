@@ -18,3 +18,7 @@ class BookPage(TemplateView):
     template_name = 'book.html'    
     
     
+    
+    
+    
+    

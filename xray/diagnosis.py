@@ -52,17 +52,19 @@ def Model(path):
     temp_img=np.expand_dims(scale_img,axis=0)
         
     Normal, Pneumonia= model.predict(temp_img)[0]
-    label = "NORMAL" if Normal > Pneumonia else "PNEUMONIA"
+    label_ = "NORMAL" if Normal > Pneumonia else "PNEUMONIA"
     proba = Normal if Normal > Pneumonia else Pneumonia
-    label = "{}: {:.2f}%".format(label, proba * 100)
+    label = "{}: {:.2f}%".format(label_, proba * 100)
     proba=round(proba*100,2)
     #result=self._model.predict_classes(test_img)[0][0]
     #label='PNEUMONIA' if result else 'NORMAL'
     origin_img=cv2.resize(origin_img,(300,300))
-    origin_img=cv2.putText(origin_img, label, (10, 25),  cv2.FONT_HERSHEY_SIMPLEX,0.7, (0, 0, 255), 2)
+    origin_img=cv2.putText(origin_img, label, (10, 25),  cv2.FONT_HERSHEY_SIMPLEX,0.7, (181, 173, 0), 2)
     #(NORMAL, PNEUMONIA) = model.predict(test_img)[0]
     #self.proba = santa if santa > notSanta else notSanta
+    
     K.clear_session()
 
-
-    return origin_img, proba
+    return origin_img, proba, label_
+    
+    

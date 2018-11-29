@@ -1,7 +1,4 @@
-
 from django.shortcuts import render, redirect, resolve_url
-
-
 from django.views.generic import TemplateView, CreateView, ListView, DetailView, DeleteView
 from .models import Xray
 from .diagnosis import Model
@@ -37,7 +34,7 @@ def XrayDiagnosis(request, pk):
     print('img = >' , img.image.url)
     # image_instance = Model()
     path = '/home/ubuntu/workspace/DeepBook' + img.image.url
-    re_img, per = Model(path)
+    re_img, per, label = Model(path)
     print(re_img)
     print(per)
     print('./xray/media/{}.jpg'.format(pk))
@@ -48,4 +45,4 @@ def XrayDiagnosis(request, pk):
 
 
     
-    return render(request, 'xray/xray_diagnosis.html', {'path': new_path2})
+    return render(request, 'xray/xray_diagnosis.html', {'path': new_path2, 'per' : per, 'label' :label})
