@@ -27,6 +27,8 @@ urlpatterns = [
     path('contact/', views.ContactPage.as_view(), name='contact'),
     path('xray/', include('xray.urls')),
     path('book/', include('book.urls')),
+    path('accounts/',include('accounts.urls')),
+    path('accounts/', include('allauth.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

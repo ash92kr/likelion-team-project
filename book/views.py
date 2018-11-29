@@ -5,3 +5,5 @@ from django.views.generic import TemplateView
 
 class BookIndex(TemplateView):
     template_name = 'book/book_index.html'
+    
+    

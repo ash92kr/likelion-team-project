@@ -1,3 +1,5 @@
+# oauth/posts/urls.py 참고함
+
 from django.conf.urls.static import static
 from django.urls import path
 from . import views

@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     # 'allauth.account',
     # 'allauth.socialaccount',
     # 'allauth.socialaccount.providers.facebook',
+
 ]
 SITE_ID = 1
 
@@ -137,8 +138,13 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+<<<<<<< HEAD
 # LOGIN_REDIRECT_URL = 'posts:list'
 # LOGOUT_REDIRECT_URL = 'posts:list'
+=======
+LOGIN_REDIRECT_URL = 'xray:list'
+LOGOUT_REDIRECT_URL = 'xray:list'
+>>>>>>> 56fa93dd07585789d29e76febb97773c067020d0
 
 # AUTHENTICATION_BACKENDS = (
     
