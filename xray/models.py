@@ -15,7 +15,7 @@ class Xray(models.Model):
                 format='JPEG',
                 options={'quality':90},
                 )
-
+#models.ImageField()
     def get_absolute_url(self):
          return reverse('xray:detail', kwargs={'pk': self.pk})
 

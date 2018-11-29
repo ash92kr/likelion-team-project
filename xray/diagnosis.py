@@ -4,6 +4,7 @@ import glob
 import numpy as np
 # from matplotlib import pyplot as plt
 import tensorflow as tf
+from keras import backend as K
 # get_ipython().run_line_magic('matplotlib', 'inline')
 
 # class Model:
@@ -61,4 +62,7 @@ def Model(path):
     origin_img=cv2.putText(origin_img, label, (10, 25),  cv2.FONT_HERSHEY_SIMPLEX,0.7, (0, 0, 255), 2)
     #(NORMAL, PNEUMONIA) = model.predict(test_img)[0]
     #self.proba = santa if santa > notSanta else notSanta
+    K.clear_session()
+
+
     return origin_img, proba
