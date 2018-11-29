@@ -15,7 +15,7 @@
 					<li data-target="#carousel-slider" data-slide-to="2"></li>
 				</ol>
 				    <div class="item">
-						<img src="{% static 'img/team/home.png' %}" class="img-responsive" style="width:1300px; height:600px;" alt=""> 
+						<img src="{% static 'img/team/home.png' %}" class="img-responsive" style="width:100%; height:600px;" alt=""> 
 
 						<div class="carousel-caption" style="top:30%">
 							<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">								
@@ -25,12 +25,12 @@
 								<p>기술도서 추천 및 폐렴 진단 서비스</p>
 							</div>
 							<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.9s">								
-								<form class="form-inline">
-									<div class="form-group">
-										<a href="{%url 'book:index'%}" class="btn btn-primary btn-lg">Book Go!</a>
-									</div>
+								<form class="form-inline" >
 									<div class="form-group">
 										<a href="{%url 'xray:index'%}" class="btn btn-primary btn-lg">Deep Go!</a>
+									</div>
+									<div class="form-group">
+										<a href="{%url 'book:index'%}" class="btn btn-primary btn-lg">Book Go!</a>
 									</div>
 								</form>
 							</div>

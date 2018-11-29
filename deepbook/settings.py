@@ -133,18 +133,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'static')        
+    os.path.join(BASE_DIR, 'static')        
 ]
+
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-<<<<<<< HEAD
+
 # LOGIN_REDIRECT_URL = 'posts:list'
 # LOGOUT_REDIRECT_URL = 'posts:list'
-=======
-LOGIN_REDIRECT_URL = 'xray:list'
-LOGOUT_REDIRECT_URL = 'xray:list'
->>>>>>> 56fa93dd07585789d29e76febb97773c067020d0
 
 # AUTHENTICATION_BACKENDS = (
     

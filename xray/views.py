@@ -1,20 +1,14 @@
-<<<<<<< HEAD
-from django.shortcuts import render, redirect, resolve_url
-=======
-# oauth/posts/views.py 참고함
 
-from django.shortcuts import render
->>>>>>> 56fa93dd07585789d29e76febb97773c067020d0
+from django.shortcuts import render, redirect, resolve_url
+
+
 from django.views.generic import TemplateView, CreateView, ListView, DetailView, DeleteView
 from .models import Xray
 from .diagnosis import Model
 from django.urls import reverse_lazy
-<<<<<<< HEAD
+
 from keras.models import load_model
 import cv2
-=======
-from django.contrib.auth.mixins import LoginRequiredMixin
->>>>>>> 56fa93dd07585789d29e76febb97773c067020d0
 
 # Create your views here.
 class XrayIndex(TemplateView):
@@ -24,7 +18,7 @@ class XrayCreate(CreateView):
     model = Xray
     fields=['image',]
 
-class XrayList(LoginRequiredMixin, ListView):
+class XrayList(ListView):
     model = Xray
     fields = ('image')
     success_url = reverse_lazy('xray:list')
