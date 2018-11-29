@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect, resolve_url
 from django.views.generic import TemplateView, CreateView, ListView, DetailView, DeleteView
 from .models import Xray
-from .diagnosis import Model
 from django.urls import reverse_lazy
 
 from keras.models import load_model
