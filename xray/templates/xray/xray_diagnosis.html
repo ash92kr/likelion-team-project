@@ -39,17 +39,18 @@ p.a {
         
 
         {% if label == "NORMAL" %}
-          <p style="font-family:Nanum Gothic;"> 딥북(DeepBook)의 분석 결과 당신의 폐는 <strong> {{per}}% </strong>의 확률로 <strong>"정상"</strong>입니다. 
+          <p style="font-family:Nanum Gothic;"> 딥북(DeepBook)의 분석 결과 당신의 폐는 
+          <span style="color:DodgerBlue "><strong> {{per}}% </strong></span>의 확률로 <span style="color:DodgerBlue "><strong>"정상"</strong></span>입니다. 
           <br> 앞으로도 건강한 폐를 위해 폐에 좋은 마늘, 블루베리, 도라지를 자주 섭취하십시오.<br>
-        본 서비스는 참고용으로만 이용하시고, 정확한 진단은 가까운 병원에 방문하세요.  
+        다만, 본 서비스는 참고용으로만 이용하시고 정확한 진단은 가까운 병원에 방문하세요.  
           
          
         {% else %}
-        <p style="font-family:Nanum Gothic;"> 딥북(DeepBook)의 분석 결과 당신의 폐는 <strong> {{per}}% </strong>의 확률로 <strong>"폐렴"</strong>이 의심됩니다. 
-          <br> 앞으로는 건강한 폐를 위해 폐에 좋은 마늘, 블루베리, 도라지를 자주 섭취하십시오.<br>
-          정기적인 검진을 원한다면 Deepbook@gmail.com으로 연락하십시오.<br>
-          본 서비스는 참고용으로만 이용하시고, 정확한 진단은 가까운 병원에 방문하세요. 
-          .
+        <p style="font-family:Nanum Gothic;"> 딥북(DeepBook)의 분석 결과 당신의 폐는 
+        <span style="color:DodgerBlue "><strong> {{per}}% </strong></span>의 확률로 <span style="color:DodgerBlue "><strong>"폐렴"</strong></span>이 의심됩니다. 
+          <br> 가까운 병원에 내원하여 정확한 진단을 받아보시길 추천합니다.<br>
+          다만, 본 서비스엔 오차가 있을 수 있으며 참고용으로만 사용하십시오. 
+          
           <!--<br><br><br><strong>Model Spec</strong><br>Use Model : Sm94Net based CNN<br>-->
           <!-- Data Set : Pneumonia data 6000장<br>-->
           <!-- Validation Accuracy : 92%</p></p> <!--더 우선순위를 가짐-->
