@@ -1,10 +1,10 @@
 from keras.models import load_model
-import cv2
 import glob
 import numpy as np
 # from matplotlib import pyplot as plt
 import tensorflow as tf
 from keras import backend as K
+import cv2
 # get_ipython().run_line_magic('matplotlib', 'inline')
 
 # class Model:
