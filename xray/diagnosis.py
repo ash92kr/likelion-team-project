@@ -43,21 +43,24 @@ import cv2
 def Model(path):
 
     _img_width, _img_height = 150, 150
-    model = load_model('./xray/softmodel.h5')
+    model = load_model('./xray/model.h5') #sigmoid 모델 넣어야함
     origin_img=cv2.imread(path)
     temp_img=cv2.resize(origin_img,(_img_width, _img_height))
         
     resize_img= temp_img
     scale_img=resize_img/255.
     temp_img=np.expand_dims(scale_img,axis=0)
-        
-    Normal, Pneumonia= model.predict(temp_img)[0]
-    label_ = "NORMAL" if Normal > Pneumonia else "PNEUMONIA"
-    proba = Normal if Normal > Pneumonia else Pneumonia
-    label = "{}: {:.2f}%".format(label_, proba * 100)
-    proba=round(proba*100,2)
-    #result=self._model.predict_classes(test_img)[0][0]
-    #label='PNEUMONIA' if result else 'NORMAL'
+    #sigmoid 값을 z_value에 저장 만약 z_value<0.5
+    #일 경우 z_value=1-z_value
+    z_value=model.predict(temp_img)[0][0]
+    if z_value<0.5:
+        z_value=1-z_value
+    #label_ = "NORMAL" if Normal > Pneumonia else "PNEUMONIA"
+    #proba = Normal if Normal > Pneumonia else Pneumonia
+    #label = "{}: {:.2f}%".format(label_, proba * 100)
+    z_value=round(z_value*100,2)
+    result=model.predict_classes(temp_img)[0][0]
+    label='PNEUMONIA' if result else 'NORMAL'
     origin_img=cv2.resize(origin_img,(300,300))
     origin_img=cv2.putText(origin_img, label, (10, 25),  cv2.FONT_HERSHEY_SIMPLEX,0.7, (181, 173, 0), 2)
     #(NORMAL, PNEUMONIA) = model.predict(test_img)[0]
@@ -65,6 +68,6 @@ def Model(path):
     
     K.clear_session()
 
-    return origin_img, proba, label_
+    return origin_img,z_value, label
     
     
