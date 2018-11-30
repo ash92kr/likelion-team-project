@@ -18,7 +18,7 @@ pip install django
 
 pip install opencv_python
 
-pip install django-imagekit   -> 문제가 생기면 uninstall하고 다시 설치할 
+pip install django-imagekit   -> 문제가 생기면 uninstall하고 다시 설치
 
 ​ 
 
