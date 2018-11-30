@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% load staticfiles %}
+{% load mathfilters %}
 
 {% block body %}
 <!--<style>-->
@@ -39,6 +40,15 @@ p.a {
         
 
         {% if label == "NORMAL" %}
+        <div class="height:40px;">
+          <span style="display:inline-block;vertical-align: middle;font-family:Nanum Gothic;"><strong>정상</strong></span>
+             <div class="progress" style="width:400px;display:inline-block;margin-bottom:0px;vertical-align: middle;">
+               <div class="progress-bar progress-bar-striped" role="progressbar" style="width: {{per|div:-2|addition:50}}%;background-color:rgba(115,108,108,0.45)" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+               <div class="progress-bar progress-bar-striped active" role="progressbar" style="width: {{per|div:2}}%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">{{per}}%</div>
+               <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%;background-color:rgba(115,108,108,0.45)" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>  
+          <span style="display:inline-block;vertical-align: middle;font-family:Nanum Gothic;"><strong>비정상</strong></span>
+        </div>
           <p style="font-family:Nanum Gothic;"> 딥북(DeepBook)의 분석 결과 당신의 폐는 
           <span style="color:DodgerBlue "><strong> {{per}}% </strong></span>의 확률로 <span style="color:DodgerBlue "><strong>"정상"</strong></span>입니다. 
           <br> 앞으로도 건강한 폐를 위해 폐에 좋은 마늘, 블루베리, 도라지를 자주 섭취하십시오.<br>
@@ -46,21 +56,31 @@ p.a {
           
          
         {% else %}
+        <div class="height:40px;">
+          <span style="display:inline-block;vertical-align: middle;font-family:Nanum Gothic;"><strong>정상</strong></span>
+             <div class="progress" style="width:400px;display:inline-block;margin-bottom:0px;vertical-align: middle;">
+               <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%;background-color:rgba(115,108,108,0.45)" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+               <div class="progress-bar progress-bar-striped active" role="progressbar" style="animation-direction: reverse;width: {{per|div:2}}%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">{{per}}%</div>
+               <div class="progress-bar progress-bar-striped" role="progressbar" style="width: {{per|div:-2|addition:50}}%;background-color:rgba(115,108,108,0.45)" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>  
+          <span style="display:inline-block;vertical-align: middle;font-family:Nanum Gothic;"><strong>비정상</strong></span>
+        </div>
+        <br>
         <p style="font-family:Nanum Gothic;"> 딥북(DeepBook)의 분석 결과 당신의 폐는 
         <span style="color:DodgerBlue "><strong> {{per}}% </strong></span>의 확률로 <span style="color:DodgerBlue "><strong>"폐렴"</strong></span>이 의심됩니다. 
           <br> 가까운 병원에 내원하여 정확한 진단을 받아보시길 추천합니다.<br>
           다만, 본 서비스엔 오차가 있을 수 있으며 참고용으로만 사용하십시오. 
-          
+       
           <!--<br><br><br><strong>Model Spec</strong><br>Use Model : Sm94Net based CNN<br>-->
           <!-- Data Set : Pneumonia data 6000장<br>-->
           <!-- Validation Accuracy : 92%</p></p> <!--더 우선순위를 가짐-->
         
         {% endif %} 
         
-         <br><br><br><strong>Model Spec</strong><br>Use Model : Sm94Net based CNN<br>
-           Data Set : Pneumonia data 6000장<br>
+         <br><br><strong>Model Spec</strong><br>Use Model : Sm94Net based CNN<br>
+           Data Set : Normal image 2000장 Pneumonia image 4000장<br>
            Validation Accuracy : 92%</p></p> <!--더 우선순위를 가짐-->
-        <br>
+      
         <div class="social">
           <a href="https://www.facebook.com/"><i class="icon-facebook"></i></a>
           <a href="https://www.instagram.com/"><i class="icon-instagram"></i></a>

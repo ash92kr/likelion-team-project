@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'xray',
     'book',
     'imagekit',
+    'mathfilters',
     # 'diagnosis',
     # 'accounts',
     # 'posts',
