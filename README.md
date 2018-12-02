@@ -20,11 +20,15 @@ pip install opencv_python
 
 pip install django-imagekit   -> 문제가 생기면 uninstall하고 다시 설치
 
+pip install django-mathfilters
+
 ​ 
 
 python manage.py makemigrations
 
 python manage.py migrate
+
+python manage.py runserver $IP:$PORT
 
 ​ 
 
