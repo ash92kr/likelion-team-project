@@ -3,19 +3,63 @@
 {% load staticfiles %}
 
 {% block body %} 
+
+
+<div class="item">
+    <img src="{% static 'img/team/book4.png' %}" class="img-responsive" style="width:100%; height:620px;" salt=""> 
+	<div class="carousel-caption" style="top:20%">
+		<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.9s">								
+			<!--<form class="form-inline">-->
+			<!--<div class="form-group">-->
+			<!--	<button type="livedemo" name="purchase" class="btn btn-primary btn-lg" required="required">Deep Go!</button>-->
+			<!--</div>-->
+			<div class="form-group">
+				<h2 style="font-family:Roboto">Book-Clustering</h2>
+				<h1 style="font-family:Roboto">Enter the search word</h1>
+	    		<br>
+                <!--<label style="font-size:15px" class="btn btn-primary btn-lg" for="my-file-selector">-->
+                <!--    <input id="my-file-selector" type="file" style="display:none"  -->
+                <!--    onchange="$('#upload-file-info').html(this.files[0].name)">-->
+                <!--    이미지 선택-->
+                <!--</label>-->
+                <!--<div class="input-group">-->
+                <!--<div class="custom-file">-->
+                <!--  <input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">-->
+                <!--  <br>  -->
+                <!--  <label class="custom-file-label" for="inputGroupFile04">Choose file</label>-->
+                <!--</div>-->
+                <!--<div class="input-group-append">-->
+                <!--  <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button>-->
+                <!--</div>-->
+                <!--<div class="input-group">-->
+                <form action = "{% url 'book:booklist' %}#pricing" method = "get">
+                {% csrf_token %}
+                    <div class="input-group input-group-sm" style="width:50%;margin-left:25%;">
+                        <input type="text" class="form-control " placeholder="검색 키워드를 입력하세요. ex)파이썬, 리눅스" name='search'>
+                        <span class="input-group-btn">
+	                    <button class="btn btn-secondary" type="submit" style="">찾기</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+	</div>
+<div id="feature">
+		<div class="container">
+			<div class="row">
+				<div class="text-center">
+					<h3>Introduction</h3>
+					<p style="font-family:Nanum Gothic;">기술 도서를 텍스트 마이닝과 군집 분석을 활용하여 분류하였습니다.<br>
+					원하는 기술 관련 키워드를 입력하세요. ex) 파이썬, 리눅스, SQL... </p>
+					
+				</div>
+			</div>
+    	<div/>
+    <div/>
+{%if books%}
 <div id="pricing">
 		<div class="container">
-			<div class="text-center">
-				<h3>BookChoice</h3><br>
-				<p>찾고 싶은 주제를 입력하세요!</p>
-				
-				<div class="input-group" style="width:50%;margin-left:25%;">
-                      <input type="text" class="form-control " placeholder="검색 키워드를 입력하세요!">
-                      <span class="input-group-btn">
-	                  <button class="btn btn-secondary" type="button" style="">찾기</button>
-                      </span>
-                </div>
-			<br>
+			<br> <br> <br>
 			<div class="pricing-area text-center">
                 <div class="row">
                     <!--<div class="col-sm-4 plan price-one wow fadeInDown" data-wow-offset="0" data-wow-delay="0.2s">-->
@@ -63,48 +107,42 @@
                             
                     <!--    </ul>-->
                     <!--</div>-->
-                    <div class="col-sm-6 col-md-3 plan price-four wow fadeInLeft">
+                    <div class="col-sm-6 col-md-3 plan price-one wow fadeInLeft">
                         <ul>
-                            <li class="heading-four">
-                                <h2>Basic</h2>
-                                <span>$3/Month</span>
+                            <li class="heading-one">
+                                <h2>Group</h2>
+                                <span>NO.1</span>
                             </li>
-                            <li>5 Gb Disk Space</li>
-                            <li>1GB Dadicated Ram</li>
-                            <li>10 Addon Domain</li>
-                            <li>10 Email Account</li>
-                            <li>24/7 Support</li>
+                            {% for key, value in books.items %}
+                            <li><a href="{{ value }}" target="_blank">{{ key }}</a></li>
+                            {% endfor %}
                           
                         </ul>
                     </div>
 
-                    <div class="col-sm-6 col-md-3 plan price-five wow fadeInLeft">
+                    <div class="col-sm-6 col-md-3 plan price-two wow fadeInLeft">
                         <ul>
-                            <li class="heading-five">
-                                <h2>Standard</h2>
-                                <span>$6/Month</span>
+                            <li class="heading-two">
+                                <h2>Group</h2></h2>
+                                <span>NO.2</span>
                             </li>
-                            <li>5 Gb Disk Space</li>
-                            <li>1GB Dadicated Ram</li>
-                            <li>10 Addon Domain</li>
-                            <li>10 Email Account</li>
-                            <li>24/7 Support</li>
+                            {% for key, value in books1.items %}
+                            <li><a href="{{ value }}" target="_blank">{{ key }}</a></li>
+                            {% endfor %}
                            
                         </ul>
                     </div>
 
-                    <div class="col-sm-6 col-md-3 plan price-six wow fadeInRight">
-                         <img src="img/rib.png">
+                    <div class="col-sm-6 col-md-3 plan price-three wow fadeInRight">
+                         
                         <ul>
-                            <li class="heading-six">
-                                <h2>Premium</h2>
-                                <span>$12/Month</span>
+                            <li class="heading-three">
+                                <h2>Group</h2>
+                                <span>NO.3</span>
                             </li>
-                            <li>5 Gb Disk Space</li>
-                            <li>1GB Dadicated Ram</li>
-                            <li>10 Addon Domain</li>
-                            <li>10 Email Account</li>
-                            <li>24/7 Support</li>
+                            {% for key, value in books2.items %}
+                            <li><a href="{{ value }}" target="_blank">{{ key }}</a></li>
+                            {% endfor %}
                            
                         </ul>
                     </div>
@@ -112,14 +150,12 @@
                     <div class="col-sm-6 col-md-3 plan price-seven wow fadeInRight">
                         <ul>
                             <li class="heading-seven">
-                                <h2>Developer</h2>
-                                <span>$19/Month</span>
+                                <h2>Group</h2>
+                                <span>NO.4</span>
                             </li>
-                            <li>5 Gb Disk Space</li>
-                            <li>1GB Dadicated Ram</li>
-                            <li>10 Addon Domain</li>
-                            <li>10 Email Account</li>
-                            <li>24/7 Support</li>
+                            {% for key, value in books3.items %}
+                            <li><a href="{{ value }}" target="_blank">{{ key }}</a></li>
+                            {% endfor %}
                             
                         </ul>
                     </div>
@@ -129,13 +165,9 @@
 	</div><!--/#pricing-->
 
 <div class="text-center">
-		<div class="copyright">
-			&copy; 2018 <a target="_blank" href="http://bootstraptaste.com/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">DeepBook</a>. All Rights Reserved.
-		</div>
-
-	</div>			
-
-
-
-
+	<div class="copyright">
+		&copy; 2018 <a target="_blank" href="http://bootstraptaste.com/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">DeepBook</a>. All Rights Reserved.
+	</div>
+</div>			
+{%endif%}
 {% endblock %}
