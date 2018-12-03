@@ -12,5 +12,3 @@ urlpatterns = [
     # path('xray/',include('xray.urls')),
 
 ]
-
-
