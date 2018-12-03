@@ -5,6 +5,7 @@ app_name = 'book'
 
 urlpatterns = [
     path('',views.BookIndex.as_view(),name='index'),
+    path('bookchoice', views.book_python,name='booklist'),
     # path('admin/', admin.site.urls),
     # path('accounts/',include('accounts.urls')),
     # path('accounts/', include('allauth.urls')),
