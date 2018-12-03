@@ -17,8 +17,6 @@ def book_python(request):
         data = json.loads(key)
         
     center = pd.read_csv('./book/{}_CENTER.csv'.format(word))
-        
-    
     df = pd.DataFrame(list(data.values()), index = data.keys())
     
     li = []
@@ -28,14 +26,12 @@ def book_python(request):
         sim = df.ix[ df['label'] == i , :-2].dot(ccc)
         
         li.append(sim.nlargest(7))
-    print('cccc========>', ccc)
-    print('simsimsim====>', sim)
     books = {}
     for book_q in li[0].index:
         books[book_q] = df['link'][book_q]
 
     books1 = {}
-    for book_w in li[1].index:
+    for book_w in li[4].index:
         books1[book_w] = df['link'][book_w]
 
     books2 = {}
@@ -43,7 +39,9 @@ def book_python(request):
         books2[book_e] = df['link'][book_e]
 
     books3 = {}
-    for book_r in li[3].index:
+    for book_r in li[5].index:
         books3[book_r] = df['link'][book_r]
 
     return render(request, 'book/book_index.html', {'books' : books, 'books1': books1, 'books2' : books2, 'books3' : books3})
+    
+# css 파일을 바꾸고 난 다음에는 ctrl+shift+R을 통해서 강력 새로고침을 해야 바뀐 스타일이 적용됨 
