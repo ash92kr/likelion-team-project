@@ -30,19 +30,11 @@ class XrayDelete(DeleteView):
 
 def XrayDiagnosis(request, pk):
     img = Xray.objects.get(id = pk)
-    print('img = >' , img)
-    print('img = >' , img.image.url)
-    # image_instance = Model()
     path = '/home/ubuntu/workspace/DeepBook' + img.image.url
     re_img, per, label = Model(path)
-    print(re_img)
-    print(per)
-    print('./xray/media/{}.jpg'.format(pk))
     new_path = './xray/media/{}.jpg'.format(pk)
     new_path1 = './media/image/new_img/{}.jpg'.format(pk)
     new_path2 = '/media/image/new_img/{}.jpg'.format(pk)
     cv2.imwrite(new_path1, re_img)
-
-
     
     return render(request, 'xray/xray_diagnosis.html', {'path': new_path2, 'per' : per, 'label' :label})
