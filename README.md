@@ -22,6 +22,8 @@ pip install django-imagekit   -> 문제가 생기면 uninstall하고 다시 설�
 
 pip install django-mathfilters
 
+pip install pandas
+
 ​ 
 
 python manage.py makemigrations
@@ -37,6 +39,11 @@ push시 충돌이 날 경우
 git pull  https://github.com/McDeepBook/DeepBook
 
 git pull  https://github.com/ash92kr/likelion-team-project
+
+
+git checkout -b about
+
+git checkout master  # 입력 후 동일하게 add, commit, push를 입력한 다음, GUI로 merge 요청을 수락한다
 
 ​ 
 
