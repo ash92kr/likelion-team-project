@@ -43,7 +43,9 @@ git pull  https://github.com/ash92kr/likelion-team-project
 
 git checkout -b about
 
-git checkout master  # 입력 후 동일하게 add, commit, push를 입력한 다음, GUI로 merge 요청을 수락한다
+git push origin about
+
+git checkout master   # 입력 후 동일하게 add, commit, push를 입력한 다음, GUI로 merge 요청을 수락한다
 
 ​ 
 
